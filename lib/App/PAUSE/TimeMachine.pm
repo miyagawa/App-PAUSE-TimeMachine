@@ -77,14 +77,19 @@ sub git_raw {
     IPC::Run::run ["git", @commands], \my $in, \*STDOUT;
 }
 
+sub git_opts {
+    my $self = shift;
+    ("--git-dir=" . $self->git_dir . "/.git", "--work-tree=.");
+}
+
 sub git {
     my($self, @commands) = @_;
-    IPC::Run::run ["git", "--git-dir", $self->git_dir, @commands];
+    IPC::Run::run ["git", $self->git_opts, @commands];
 }
 
 sub git_capture {
     my($self, @commands) = @_;
-    IPC::Run::run ["git", "--git-dir", $self->git_dir, @commands], \my $in, \my $out;
+    IPC::Run::run ["git", $self->git_opts, @commands], \my $in, \my $out;
     $out;
 }
 
