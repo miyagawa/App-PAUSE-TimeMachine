@@ -12,7 +12,6 @@ pausetm - Web Server and CLI script to display PAUSE 02package data in previous 
 
 =head1 SYNOPSIS
 
-
   # initialize PAUSE-git repository if it's not synced yet
   # WARNING: it will take a lot of time to do the first sync
   > pausetm init
@@ -42,7 +41,9 @@ pausetm - Web Server and CLI script to display PAUSE 02package data in previous 
 =head1 DESCRIPTION
 
 C<pausetm> is a frontend script to get 02packages.details.txt data
-provided by PAUSE-git repository at L<https://github.com/batchpause/PAUSE-git>
+provided by PAUSE-git repository at
+L<https://github.com/batchpause/PAUSE-git> which has a history of
+package list since March 31st, 2012.
 
 Note that this tool is just a frontend tool, and C<cpanm> can utilize
 a local C<02packages.details.txt> with its C<--mirror-index>
