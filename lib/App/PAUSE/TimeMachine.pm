@@ -13,7 +13,12 @@ use File::pushd;
 our $GIT_REPO = "git://github.com/batchpause/PAUSE-git";
 
 sub new {
-    bless {}, shift;
+    my($class, %args) = @_;
+
+    $args{git_dir} ||= $ENV{"PAUSETM_GIT_DIR"} || "$ENV{HOME}/.pausetm/PAUSE-git";
+    bless {
+        git_dir => $args{git_dir},
+    }, $class;
 }
 
 sub psgi_app {
@@ -62,7 +67,7 @@ sub psgi_app {
 }
 
 sub git_dir {
-    $ENV{"PAUSETM_GIT_DIR"} || "$ENV{HOME}/.pausetm/PAUSE-git";
+    $_[0]->{git_dir};
 }
 
 sub run {
