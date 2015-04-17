@@ -36,13 +36,18 @@ pausetm - Web Server and CLI script to display PAUSE 02package data in previous 
   ...
 
   # runs httpd that works as a mirror!
-  # use http://localhost:5000/<yyyy>-<mm>-<dd> as a mirror URL for CPAN clients
+  # use this URL as: cpanm -M http://localhost:5000/<yyyy>-<mm>-<dd> module...
   > pausetm server
 
 =head1 DESCRIPTION
 
 C<pausetm> is a frontend script to get 02packages.details.txt data
 provided by PAUSE-git repository at L<https://github.com/batchpause/PAUSE-git>
+
+Note that this tool is just a frontend tool, and C<cpanm> can utilize
+a local C<02packages.details.txt> with its C<--mirror-index>
+option without running a web server. Read more details about it at
+L<http://weblog.bulknews.net/post/48794875384/freeze-cpan-deps-with-pause-git>
 
 =head1 COMMANDS
 
