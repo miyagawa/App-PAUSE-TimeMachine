@@ -75,6 +75,8 @@ listen port, see L<plackup> man page.
 You can access http://localhost:5000/<yyyy>-<mm>-<dd> for example, to
 make it work as a CPAN mirror in CPAN clients such as C<cpanm>.
 
+=back
+
 =head1 AUTHOR
 
 Tatsuhiko Miyagawa
