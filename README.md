@@ -1,14 +1,16 @@
 # NAME
 
-App::PAUSE::TimeMachine - Blah blah blah
+App::PAUSE::TimeMachine - Web server and CLI to display PAUSE package list in previous time
 
 # SYNOPSIS
 
-    use App::PAUSE::TimeMachine;
+For `pausetm` command line usage, see [pausetm](https://metacpan.org/pod/pausetm).
 
-# DESCRIPTION
+App::PAUSE::TimeMachine provides a PSGI web application coderef, which
+you can use in your own application or apply whatever middleware you'd
+like to apply.
 
-App::PAUSE::TimeMachine is
+    my $app = App::PAUSE::TimeMachine->new->psgi_app;
 
 # AUTHOR
 
@@ -24,3 +26,5 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 # SEE ALSO
+
+[pausetm](https://metacpan.org/pod/pausetm)
