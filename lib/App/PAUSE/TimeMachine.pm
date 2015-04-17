@@ -72,19 +72,19 @@ sub run {
     $self->$can(@args);
 }
 
-sub git_no_C {
+sub git_raw {
     my($self, @commands) = @_;
     IPC::Run::run ["git", @commands], \my $in, \*STDOUT;
 }
 
 sub git {
     my($self, @commands) = @_;
-    IPC::Run::run ["git", "-C", $self->git_dir, @commands];
+    IPC::Run::run ["git", "--git-dir", $self->git_dir, @commands];
 }
 
 sub git_capture {
     my($self, @commands) = @_;
-    IPC::Run::run ["git", "-C", $self->git_dir, @commands], \my $in, \my $out;
+    IPC::Run::run ["git", "--git-dir", $self->git_dir, @commands], \my $in, \my $out;
     $out;
 }
 
@@ -95,7 +95,7 @@ sub cmd_help {
 
 sub cmd_init {
     my $self = shift;
-    $self->git_no_C('clone', $GIT_REPO, $self->git_dir);
+    $self->git_raw('clone', $GIT_REPO, $self->git_dir);
 }
 
 sub cmd_sync {
