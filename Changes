@@ -2,5 +2,9 @@ Revision history for App-PAUSE-TimeMachine
 
 {{$NEXT}}
 
+0.02  2015-04-17 15:13:18 CEST
+        - documentation change
+        - use --git-dir for old git
+
 0.01  2015-04-17 15:06:19 CEST
         - Initial release
