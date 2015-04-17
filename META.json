@@ -37,6 +37,7 @@
       },
       "runtime" : {
          "requires" : {
+            "File::pushd" : "0",
             "IO::Compress::Gzip" : "0",
             "IPC::Run" : "0",
             "Plack" : "1.0",
@@ -62,6 +63,6 @@
          "web" : "https://github.com/miyagawa/App-PAUSE-TimeMachine"
       }
    },
-   "version" : "0.03"
+   "version" : "0.04"
 }
 
