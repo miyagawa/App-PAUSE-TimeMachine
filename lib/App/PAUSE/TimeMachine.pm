@@ -8,6 +8,7 @@ use Pod::Usage ();
 use IPC::Run;
 use Plack::Runner;
 use IO::Compress::Gzip ();
+use File::pushd;
 
 our $GIT_REPO = "git://github.com/batchpause/PAUSE-git";
 
@@ -105,7 +106,8 @@ sub cmd_init {
 
 sub cmd_sync {
     my $self = shift;
-    $self->git('pull', 'origin', 'master');
+    my $dir = pushd $self->git_dir;
+    $self->git_raw('pull', 'origin', 'master');
 }
 
 sub cmd_cat {
