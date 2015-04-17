@@ -17,7 +17,7 @@ pausetm - Web Server and CLI script to display PAUSE 02package data in previous 
   > pausetm init
 
   # pulls PAUSE-git repository
-  > paysetm sync
+  > pausetm sync
 
   # use your custom PAUSE-git repository
   > export PAUSETM_GIT_DIR=~/git/PAUSE-git
